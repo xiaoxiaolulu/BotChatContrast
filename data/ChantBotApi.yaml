@@ -1,0 +1,13 @@
+# 聊天机器人对比的接口, yaml 管理，支持动态传参${val}$
+body:
+  method: post
+  url: https://192.168.1.104:10033/api/admin/channel/v2/webchat/getanswer
+  json:
+    id: 254b7095-0281-4fab-b27f-9f080f063684
+    webtalkid: 0b8ade4002e14485941cdc3705ad5de3
+    question: ${question}$
+    channels: WebChat
+  headers:
+    Access-Token: B7D57FF6592EEC0E9EB2114C512D6DE2A1BB2C2B0C300BEB5B53140B0B602078
+    Content-Type: application/json
+outValues: Text

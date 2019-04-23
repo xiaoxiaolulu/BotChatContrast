@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html style="height: 100%">
+<head>
+    <meta charset="utf-8">
+    <style type="text/css">
+        #ResultTitle {
+            font-family: Verdana, sans-serif;
+            font-style: normal;
+            color: #1ab394;
+            font-size: 20px;
+            font-weight: 700;
+        }
+
+        .col-sm-12 {
+            margin: 20px;
+        }
+
+        #container {
+            width: 980px;
+            margin-top: 50px;
+            float: right;
+            height: 100%
+        }
+
+        .dashboard-header {
+            border-bottom: 1px solid lightgray;
+        }
+
+        #testBody {
+            color: #1ab394;
+            font-size: 15px;
+            font-family: "Microsoft JhengHei UI",
+            sans-serif;
+            margin: 10px 10px 10px 10px
+        }
+
+        #TestResultRep {
+            font-size: 12px;
+            font-family: "Microsoft JhengHei UI", sans-serif;
+        }
+
+        #count-1, #count-2, #count-3, #count-4, #count-5, #count-6, #count-7 {
+            margin-top: 20px;
+        }
+
+        input {
+            margin-left: 20px;
+        }
+
+        #res {
+            position: relative;
+            top: -120px
+        }
+
+        .Res {
+            color: Green
+        }
+    </style>
+</head>
+<body style="height: 50%; margin: 0">
+<div class="row  border-bottom white-bg dashboard-header">
+    <div class="col-sm-12 text-center" align="center">
+        <span id="ResultTitle">BotChatTestReport</span>
+    </div>
+</div>
+<div id="container"></div>
+<div class="row border-bottom white-bg dashboard-header" id="testBody">
+    <ul type="none">
+        <li id="count-1">
+            <label for="testName">用例名称:</label>
+            <input type="text" value="BotChatTestReport" id="testName" readonly="readonly" disabled="disabled">
+        </li>
+        <li id="count-2">
+            <label for="testCounts">用例总数:</label>
+            <input type="text" value={{header.sum}} id="testCounts" readonly="readonly" disabled="disabled">
+        </li>
+        <li id="count-3">
+            <label for="testPass">用例通过:</label>
+            <input type="text" value={{header.pass}} id="testPass" readonly="readonly" disabled="disabled">
+        </li>
+        <li id="count-4">
+            <label for="testFail">用例失败:</label>
+            <input type="text" value={{header.fail}} id="testFail" readonly="readonly" disabled="disabled">
+        </li>
+        <li id="count-5">
+            <label for="testSkip">用例跳过:</label>
+            <input type="text" value={{header.skip}} id="testSkip" readonly="readonly" disabled="disabled">
+        </li>
+        <li id="count-6">
+            <label for="testStartTime">开始时间:</label>
+            <input type="text" value={{header.start}} id="testStartTime" readonly="readonly" disabled="disabled">
+        </li>
+        <li id="count-7">
+            <label for="testAllTime">运行时间:</label>
+            <input type="text" value={{header.run}} id="testAllTime" readonly="readonly" disabled="disabled">
+        </li>
+    </ul>
+</div>
+<table id="res" border="1" width="100%">
+    <tr>
+        <th>test_id</th>
+        <th>test_question</th>
+        <th>test_knowledge</th>
+        <th>test_response</th>
+        <th>test_diff</th>
+        <th>test_result</th>
+    </tr>
+    {% for res in results %}
+    <tr id="TestResultRep">
+        <th>{{ loop.index }}</th>
+        <th>{{ res.question}}</th>
+        <th>{{res.knowledge}}</th>
+        <th>{{res.response}}</th>
+        <th>{{res.diff}}</th>
+        <th class="Res">{{res.result}}</th>
+    </tr>
+    {% endfor %}
+</table>
+<script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/echarts.min.js"></script>
+<script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts-gl/echarts-gl.min.js"></script>
+<script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts-stat/ecStat.min.js"></script>
+<script type="text/javascript"
+        src="http://echarts.baidu.com/gallery/vendors/echarts/extension/dataTool.min.js"></script>
+<script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/map/js/china.js"></script>
+<script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/map/js/world.js"></script>
+<script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/extension/bmap.min.js"></script>
+<script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/simplex.js"></script>
+<script type="text/javascript">
+    var dom = document.getElementById("container");
+    var myChart = echarts.init(dom);
+    var passNum = 0;
+    var failNum = 0;
+    var resultStatus;
+
+    function GiveReslutStatusColorAndDrawPie() {
+        resultStatus = document.getElementsByClassName('Res');
+        for (var i = 0; i < resultStatus.length; i++) {
+            if (resultStatus[i].innerText == 'fail') {
+                resultStatus[i].style.color = 'Red';
+                failNum += 1;
+                console.log(failNum);
+            } else {
+                passNum += 1;
+                console.log(passNum)
+            }
+            option = null;
+            option = {
+                title: {
+                    text: '',
+                    subtext: '',
+                    x: 'center'
+                },
+                tooltip: {
+                    trigger: 'item',
+                    formatter: "{a} <br/>{b} : {c} ({d}%)"
+                },
+                color:['forestgreen', 'brown'],
+                legend: {
+                    orient: 'vertical',
+                    left: 'right',
+                    data: ['成功', '失败']
+                },
+                series: [
+                    {
+                        name: '访问来源',
+                        type: 'pie',
+                        radius: '45%',
+                        center: ['70%', '30%'],
+                        data: [
+                            {value: passNum, name: '成功'},
+                            {value: failNum, name: '失败'},
+                        ],
+                        itemStyle: {
+                            emphasis: {
+                                shadowBlur: 10,
+                                shadowOffsetX: 0,
+                                shadowColor: 'rgba(0, 0, 0, 0.5)'
+                            }
+                        }
+                    }
+                ]
+            };
+            if (option && typeof option === "object") {
+                myChart.setOption(option, true);
+            }
+        }
+    }
+
+    GiveReslutStatusColorAndDrawPie();
+</script>
+</body>
+</html>
