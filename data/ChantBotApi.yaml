@@ -3,7 +3,7 @@ body:
   method: post
   url: https://192.168.1.104:10033/api/admin/channel/v2/webchat/getanswer
   json:
-    id: 254b7095-0281-4fab-b27f-9f080f063684
+    id: 0cced7d2-c755-438f-a44f-57bddd787184
     webtalkid: 0b8ade4002e14485941cdc3705ad5de3
     question: ${question}$
     channels: WebChat

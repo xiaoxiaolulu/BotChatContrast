@@ -81,7 +81,10 @@ def cal_con_dis(v1: list, v2: list, length_vector):
     A = math.sqrt(np.sum(a1**2)) * math.sqrt(np.sum(a1**2))
     B = np.sum(a1 * a2)
 
-    return format(float(B) / A, ".3f")
+    try:
+        return format(float(B) / A, ".3f")
+    except ZeroDivisionError:
+        return 0
 
 
 if __name__ == '__main__':

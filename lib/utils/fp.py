@@ -10,7 +10,7 @@ def iter_files(path):
     :rtype: list object
     """
 
-    filename = []
+    filepath = []
 
     def iterate_files(path):
 
@@ -21,8 +21,9 @@ def iter_files(path):
             all_files = os.listdir(abspath)
             for items in all_files:
                 files = os.path.join(path, items)
+                name = items.split('.')[0]
                 if os.path.isfile(files):
-                    filename.append(files)
+                    filepath.append({name: files})
                 else:
                     iterate_files(files)
         except (FileNotFoundError, AttributeError, BytesWarning, IOError, FileExistsError):
@@ -30,4 +31,8 @@ def iter_files(path):
 
     iterate_files(path)
 
-    return filename
+    return filepath
+
+
+if __name__ == '__main__':
+    print(iter_files(r'F:\BotChatContrast\case'))

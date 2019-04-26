@@ -20,14 +20,15 @@ def render_template(template_filename: str, content: dict):
     return TEMPLATE_ENVIRONMENT.get_template(template_filename).render(content)
 
 
-def create_test_report(header: dict, results: list) -> None:
+def create_test_report(name: str, header: dict, results: list) -> None:
     r"""Create test reports.
 
+    :param name: The test report name, str object.
     :param header: Test each data header in the report, dict object.
     :param results: Values of test results, list object
     :return: None
     """
-    name = "./report/BotChatTestReport.html"
+    name = "./report/report/{}.html".format(name)
     with open(name, 'w', encoding="utf-8") as f:
         html = render_template('index.html', {'header': header, "results": results})
         f.write(html)

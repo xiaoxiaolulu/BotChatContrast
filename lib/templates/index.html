@@ -60,7 +60,7 @@
 <body style="height: 50%; margin: 0">
 <div class="row  border-bottom white-bg dashboard-header">
     <div class="col-sm-12 text-center" align="center">
-        <span id="ResultTitle">BotChatTestReport</span>
+        <span id="ResultTitle">{{header.name}}</span>
     </div>
 </div>
 <div id="container"></div>
@@ -68,23 +68,23 @@
     <ul type="none">
         <li id="count-1">
             <label for="testName">用例名称:</label>
-            <input type="text" value="BotChatTestReport" id="testName" readonly="readonly" disabled="disabled">
+            <input type="text" value="{{header.name}}" id="testName" readonly="readonly" disabled="disabled">
         </li>
         <li id="count-2">
             <label for="testCounts">用例总数:</label>
-            <input type="text" value={{header.sum}} id="testCounts" readonly="readonly" disabled="disabled">
+            <input type="text" value=0 id="testCounts" readonly="readonly" disabled="disabled">
         </li>
         <li id="count-3">
             <label for="testPass">用例通过:</label>
-            <input type="text" value={{header.pass}} id="testPass" readonly="readonly" disabled="disabled">
+            <input type="text" value=0 id="testPass" readonly="readonly" disabled="disabled">
         </li>
         <li id="count-4">
             <label for="testFail">用例失败:</label>
-            <input type="text" value={{header.fail}} id="testFail" readonly="readonly" disabled="disabled">
+            <input type="text" value=0 id="testFail" readonly="readonly" disabled="disabled">
         </li>
         <li id="count-5">
             <label for="testSkip">用例跳过:</label>
-            <input type="text" value={{header.skip}} id="testSkip" readonly="readonly" disabled="disabled">
+            <input type="text" value=0 id="testSkip" readonly="readonly" disabled="disabled">
         </li>
         <li id="count-6">
             <label for="testStartTime">开始时间:</label>
@@ -98,17 +98,19 @@
 </div>
 <table id="res" border="1" width="100%">
     <tr>
-        <th>test_id</th>
-        <th>test_question</th>
-        <th>test_knowledge</th>
-        <th>test_response</th>
-        <th>test_diff</th>
-        <th>test_result</th>
+        <th>ID</th>
+        <th>Question</th>
+        <th>Intent</th>
+        <th>ExpectedKnowledge</th>
+        <th>ActualKnowlege</th>
+        <th>MatchingScore</th>
+        <th>Result</th>
     </tr>
     {% for res in results %}
     <tr id="TestResultRep">
         <th>{{ loop.index }}</th>
         <th>{{ res.question}}</th>
+        <th>{{ res.intent }}</th>
         <th>{{res.knowledge}}</th>
         <th>{{res.response}}</th>
         <th>{{res.diff}}</th>
@@ -125,12 +127,14 @@
 <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/map/js/world.js"></script>
 <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/extension/bmap.min.js"></script>
 <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/simplex.js"></script>
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
 <script type="text/javascript">
     var dom = document.getElementById("container");
     var myChart = echarts.init(dom);
-    var passNum = 0;
-    var failNum = 0;
+    var passNum = parseFloat($('#testPass').val());
+    var failNum = parseFloat($('#testFail').val());
     var resultStatus;
+    var sumNum = parseFloat($('#testCounts').val());
 
     function GiveReslutStatusColorAndDrawPie() {
         resultStatus = document.getElementsByClassName('Res');
@@ -138,10 +142,8 @@
             if (resultStatus[i].innerText == 'fail') {
                 resultStatus[i].style.color = 'Red';
                 failNum += 1;
-                console.log(failNum);
             } else {
                 passNum += 1;
-                console.log(passNum)
             }
             option = null;
             option = {
@@ -184,8 +186,11 @@
                 myChart.setOption(option, true);
             }
         }
+        sumNum = failNum + passNum;
+        $("#testPass").val(passNum);
+        $("#testFail").val(failNum);
+        $("#testCounts").val(sumNum);
     }
-
     GiveReslutStatusColorAndDrawPie();
 </script>
 </body>

@@ -1,5 +1,4 @@
 # -*- coding:utf-8 -*-
-import os
 import six
 import abc
 import logging
@@ -77,7 +76,7 @@ class ColorConfig(Color):
 class Logger(logging.Logger):
 
     def __init__(self, filemode='a', encoding='utf-8', level=DEBUG, stream=True, file=True):
-        self.filename = os.path.join('./report/log/', '{}.log'.format(time_setting.timestamp()))
+        self.filename = './report/log/BotChatContrast.log'
         self.mode = filemode
         self.encoding = encoding
         self.now = time_setting.timestamp('format_now')

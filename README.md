@@ -4,14 +4,14 @@ BotChatContrast 是一款以Excel进行用例维护的聊天机器人文本回�
 #### 项目安装及使用
 ```text
 1. 进入项目根目录执行 pip install -r requirements.txt 安装依赖库
-2. 项目运行, 根目录执行python Main.py 进行运行
-3. 进行完程序进入report查看html报告
+2. 项目运行, 根目录执行python run.py 进行运行
+3. 进行完程序进入report查看html报告, 测试报告根据运行的测试用例名生成对应名字的html文件
 ```
 
 
 ##### 报告详情修改
 ```text
-如需改变报告详情内容 -》进入utils修改index.html, 修改一下代码，源码如下
+如需改变报告详情内容 -》进入lib/templates修改index.html, 修改一下代码，源码如下
 <table border="1" width="100%">
     <tr>
         <th>test_id</th>
