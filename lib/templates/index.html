@@ -1,8 +1,13 @@
 <!DOCTYPE html>
-<html style="height: 100%">
+<html style="">
 <head>
     <meta charset="utf-8">
+    <!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <style type="text/css">
+        html,body{
+            overflow:auto;
+        }
         #ResultTitle {
             font-family: Verdana, sans-serif;
             font-style: normal;
@@ -15,11 +20,13 @@
             margin: 20px;
         }
 
+        .container_father{
+            text-align:center;
+        }
         #container {
-            width: 980px;
-            margin-top: 50px;
-            float: right;
-            height: 100%
+            width:400px;
+            height:320px;
+            margin:0 auto;
         }
 
         .dashboard-header {
@@ -31,7 +38,6 @@
             font-size: 15px;
             font-family: "Microsoft JhengHei UI",
             sans-serif;
-            margin: 10px 10px 10px 10px
         }
 
         #TestResultRep {
@@ -49,7 +55,6 @@
 
         #res {
             position: relative;
-            top: -120px
         }
 
         .Res {
@@ -57,44 +62,50 @@
         }
     </style>
 </head>
-<body style="height: 50%; margin: 0">
+<body style="margin: 0">
 <div class="row  border-bottom white-bg dashboard-header">
     <div class="col-sm-12 text-center" align="center">
         <span id="ResultTitle">{{header.name}}</span>
     </div>
 </div>
-<div id="container"></div>
-<div class="row border-bottom white-bg dashboard-header" id="testBody">
-    <ul type="none">
-        <li id="count-1">
-            <label for="testName">用例名称:</label>
-            <input type="text" value="{{header.name}}" id="testName" readonly="readonly" disabled="disabled">
-        </li>
-        <li id="count-2">
-            <label for="testCounts">用例总数:</label>
-            <input type="text" value=0 id="testCounts" readonly="readonly" disabled="disabled">
-        </li>
-        <li id="count-3">
-            <label for="testPass">用例通过:</label>
-            <input type="text" value=0 id="testPass" readonly="readonly" disabled="disabled">
-        </li>
-        <li id="count-4">
-            <label for="testFail">用例失败:</label>
-            <input type="text" value=0 id="testFail" readonly="readonly" disabled="disabled">
-        </li>
-        <li id="count-5">
-            <label for="testSkip">用例跳过:</label>
-            <input type="text" value=0 id="testSkip" readonly="readonly" disabled="disabled">
-        </li>
-        <li id="count-6">
-            <label for="testStartTime">开始时间:</label>
-            <input type="text" value={{header.start}} id="testStartTime" readonly="readonly" disabled="disabled">
-        </li>
-        <li id="count-7">
-            <label for="testAllTime">运行时间:</label>
-            <input type="text" value={{header.run}} id="testAllTime" readonly="readonly" disabled="disabled">
-        </li>
-    </ul>
+<div class='container-fluid'>
+    <div class='row'>
+        <div class="border-bottom white-bg dashboard-header col-sm-6" id="testBody">
+            <ul type="none">
+                <li id="count-1">
+                    <label for="testName">用例名称:</label>
+                    <input type="text" value="{{header.name}}" id="testName" readonly="readonly" disabled="disabled">
+                </li>
+                <li id="count-2">
+                    <label for="testCounts">用例总数:</label>
+                    <input type="text" value=0 id="testCounts" readonly="readonly" disabled="disabled">
+                </li>
+                <li id="count-3">
+                    <label for="testPass">用例通过:</label>
+                    <input type="text" value=0 id="testPass" readonly="readonly" disabled="disabled">
+                </li>
+                <li id="count-4">
+                    <label for="testFail">用例失败:</label>
+                    <input type="text" value=0 id="testFail" readonly="readonly" disabled="disabled">
+                </li>
+                <li id="count-5">
+                    <label for="testSkip">用例跳过:</label>
+                    <input type="text" value=0 id="testSkip" readonly="readonly" disabled="disabled">
+                </li>
+                <li id="count-6">
+                    <label for="testStartTime">开始时间:</label>
+                    <input type="text" value={{header.start}}  id="testStartTime" readonly="readonly" disabled="disabled">
+                </li>
+                <li id="count-7">
+                    <label for="testAllTime">运行时间:</label>
+                    <input type="text" value={{header.run}} id="testAllTime" readonly="readonly" disabled="disabled">
+                </li>
+            </ul>
+        </div>
+        <div class='container_father col-sm-6 border-bottom'>
+            <div id="container" ></div>
+        </div>
+    </div>
 </div>
 <table id="res" border="1" width="100%">
     <tr>
@@ -128,70 +139,74 @@
 <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/extension/bmap.min.js"></script>
 <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/simplex.js"></script>
 <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+<!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 <script type="text/javascript">
-    var dom = document.getElementById("container");
-    var myChart = echarts.init(dom);
-    var passNum = parseFloat($('#testPass').val());
-    var failNum = parseFloat($('#testFail').val());
-    var resultStatus;
-    var sumNum = parseFloat($('#testCounts').val());
+    $(function(){
+        var dom = document.getElementById("container");
+        var myChart = echarts.init(dom);
+        var passNum = parseFloat($('#testPass').val());
+        var failNum = parseFloat($('#testFail').val());
+        var resultStatus;
+        var sumNum = parseFloat($('#testCounts').val());
 
-    function GiveReslutStatusColorAndDrawPie() {
-        resultStatus = document.getElementsByClassName('Res');
-        for (var i = 0; i < resultStatus.length; i++) {
-            if (resultStatus[i].innerText == 'fail') {
-                resultStatus[i].style.color = 'Red';
-                failNum += 1;
-            } else {
-                passNum += 1;
-            }
-            option = null;
-            option = {
-                title: {
-                    text: '',
-                    subtext: '',
-                    x: 'center'
-                },
-                tooltip: {
-                    trigger: 'item',
-                    formatter: "{a} <br/>{b} : {c} ({d}%)"
-                },
-                color:['forestgreen', 'brown'],
-                legend: {
-                    orient: 'vertical',
-                    left: 'right',
-                    data: ['成功', '失败']
-                },
-                series: [
-                    {
-                        name: '访问来源',
-                        type: 'pie',
-                        radius: '45%',
-                        center: ['70%', '30%'],
-                        data: [
-                            {value: passNum, name: '成功'},
-                            {value: failNum, name: '失败'},
-                        ],
-                        itemStyle: {
-                            emphasis: {
-                                shadowBlur: 10,
-                                shadowOffsetX: 0,
-                                shadowColor: 'rgba(0, 0, 0, 0.5)'
+        function GiveReslutStatusColorAndDrawPie() {
+            resultStatus = document.getElementsByClassName('Res');
+            for (var i = 0; i < resultStatus.length; i++) {
+                if (resultStatus[i].innerText == 'fail') {
+                    resultStatus[i].style.color = 'Red';
+                    failNum += 1;
+                } else {
+                    passNum += 1;
+                }
+                option = null;
+                option = {
+                    title: {
+                        text: '',
+                        subtext: '',
+                        x: 'center'
+                    },
+                    tooltip: {
+                        trigger: 'item',
+                        formatter: "{a} <br/>{b} : {c} ({d}%)"
+                    },
+                    color:['forestgreen', 'brown'],
+                    legend: {
+                        orient: 'vertical',
+                        left: 'right',
+                        data: ['成功', '失败']
+                    },
+                    series: [
+                        {
+                            name: '访问来源',
+                            type: 'pie',
+                            radius: '45%',
+                            center: ['70%', '30%'],
+                            data: [
+                                {value: passNum, name: '成功'},
+                                {value: failNum, name: '失败'},
+                            ],
+                            itemStyle: {
+                                emphasis: {
+                                    shadowBlur: 10,
+                                    shadowOffsetX: 0,
+                                    shadowColor: 'rgba(0, 0, 0, 0.5)'
+                                }
                             }
                         }
-                    }
-                ]
-            };
-            if (option && typeof option === "object") {
-                myChart.setOption(option, true);
+                    ]
+                };
+                if (option && typeof option === "object") {
+                    myChart.setOption(option, true);
+                }
             }
+            sumNum = failNum + passNum;
+            $("#testPass").val(passNum);
+            $("#testFail").val(failNum);
+            $("#testCounts").val(sumNum);
         }
-        sumNum = failNum + passNum;
-        $("#testPass").val(passNum);
-        $("#testFail").val(failNum);
-        $("#testCounts").val(sumNum);
-    }
-    GiveReslutStatusColorAndDrawPie();
+        GiveReslutStatusColorAndDrawPie();
+    })
 </script>
 </body>
 </html>
