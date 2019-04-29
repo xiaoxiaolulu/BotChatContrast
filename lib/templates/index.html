@@ -3,11 +3,13 @@
 <head>
     <meta charset="utf-8">
     <!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <style type="text/css">
-        html,body{
-            overflow:auto;
+        html, body {
+            overflow: auto;
         }
+
         #ResultTitle {
             font-family: Verdana, sans-serif;
             font-style: normal;
@@ -20,13 +22,14 @@
             margin: 20px;
         }
 
-        .container_father{
-            text-align:center;
+        .container_father {
+            text-align: center;
         }
+
         #container {
-            width:400px;
-            height:320px;
-            margin:0 auto;
+            width: 400px;
+            height: 320px;
+            margin: 0 auto;
         }
 
         .dashboard-header {
@@ -40,7 +43,7 @@
             sans-serif;
         }
 
-        #TestResultRep {
+        .TestResultRep {
             font-size: 12px;
             font-family: "Microsoft JhengHei UI", sans-serif;
         }
@@ -65,7 +68,7 @@
 <body style="margin: 0">
 <div class="row  border-bottom white-bg dashboard-header">
     <div class="col-sm-12 text-center" align="center">
-        <span id="ResultTitle">{{header.name}}</span>
+        <span id="ResultTitle">{{ header.name }}</span>
     </div>
 </div>
 <div class='container-fluid'>
@@ -74,7 +77,7 @@
             <ul type="none">
                 <li id="count-1">
                     <label for="testName">用例名称:</label>
-                    <input type="text" value="{{header.name}}" id="testName" readonly="readonly" disabled="disabled">
+                    <input type="text" value="{{ header.name }}" id="testName" readonly="readonly" disabled="disabled">
                 </li>
                 <li id="count-2">
                     <label for="testCounts">用例总数:</label>
@@ -94,16 +97,17 @@
                 </li>
                 <li id="count-6">
                     <label for="testStartTime">开始时间:</label>
-                    <input type="text" value={{header.start}}  id="testStartTime" readonly="readonly" disabled="disabled">
+                    <input type="text" value={{ header.start }}  id="testStartTime" readonly="readonly"
+                           disabled="disabled">
                 </li>
                 <li id="count-7">
                     <label for="testAllTime">运行时间:</label>
-                    <input type="text" value={{header.run}} id="testAllTime" readonly="readonly" disabled="disabled">
+                    <input type="text" value={{ header.run }} id="testAllTime" readonly="readonly" disabled="disabled">
                 </li>
             </ul>
         </div>
         <div class='container_father col-sm-6 border-bottom'>
-            <div id="container" ></div>
+            <div id="container"></div>
         </div>
     </div>
 </div>
@@ -118,15 +122,15 @@
         <th>Result</th>
     </tr>
     {% for res in results %}
-    <tr id="TestResultRep">
-        <th>{{ loop.index }}</th>
-        <th>{{ res.question}}</th>
-        <th>{{ res.intent }}</th>
-        <th>{{res.knowledge}}</th>
-        <th>{{res.response}}</th>
-        <th>{{res.diff}}</th>
-        <th class="Res">{{res.result}}</th>
-    </tr>
+        <tr class="TestResultRep">
+            <th>{{ loop.index }}</th>
+            <th>{{ res.question }}</th>
+            <th>{{ res.intent }}</th>
+            <th>{{ res.knowledge }}</th>
+            <th>{{ res.response }}</th>
+            <th>{{ res.diff }}</th>
+            <th class="Res">{{ res.result }}</th>
+        </tr>
     {% endfor %}
 </table>
 <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/echarts.min.js"></script>
@@ -140,9 +144,31 @@
 <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/simplex.js"></script>
 <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
 <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js"
+        integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+        crossorigin="anonymous"></script>
 <script type="text/javascript">
-    $(function(){
+    $(function () {
+        function ChangePngResult() {
+            var ResultTh = $(".TestResultRep");
+            for (var i = 0; i < ResultTh.length; i++) {
+                var PngValue = ResultTh[i].children[3].innerText;
+                var PngResult = ResultTh[i].children[6];
+                var PngScore = ResultTh[i].children[5].innerText;
+                var pngMath = RegExp(/png/);
+                var jpgMath = RegExp(/jpg/);
+                if (PngValue.match(pngMath) || PngValue.match(jpgMath)) {
+                    if (parseFloat(PngScore) != 1) {
+                        PngResult.innerHTML = 'Fail';
+                    }
+                }
+            }
+        }
+
+        ChangePngResult();
+    });
+
+    $(function () {
         var dom = document.getElementById("container");
         var myChart = echarts.init(dom);
         var passNum = parseFloat($('#testPass').val());
@@ -153,7 +179,7 @@
         function GiveReslutStatusColorAndDrawPie() {
             resultStatus = document.getElementsByClassName('Res');
             for (var i = 0; i < resultStatus.length; i++) {
-                if (resultStatus[i].innerText == 'fail') {
+                if (resultStatus[i].innerText == 'Fail') {
                     resultStatus[i].style.color = 'Red';
                     failNum += 1;
                 } else {
@@ -170,7 +196,7 @@
                         trigger: 'item',
                         formatter: "{a} <br/>{b} : {c} ({d}%)"
                     },
-                    color:['forestgreen', 'brown'],
+                    color: ['forestgreen', 'brown'],
                     legend: {
                         orient: 'vertical',
                         left: 'right',
@@ -205,6 +231,7 @@
             $("#testFail").val(failNum);
             $("#testCounts").val(sumNum);
         }
+
         GiveReslutStatusColorAndDrawPie();
     })
 </script>

@@ -1,5 +1,6 @@
 # -*- coding:utf-8 -*-
 import os
+from lib.utils import time_setting as TS
 from jinja2 import Environment, FileSystemLoader
 
 
@@ -28,7 +29,7 @@ def create_test_report(name: str, header: dict, results: list) -> None:
     :param results: Values of test results, list object
     :return: None
     """
-    name = "./report/report/{}.html".format(name)
+    name = "./report/report/{}_{}.html".format(name, TS.timestamp('format_day'))
     with open(name, 'w', encoding="utf-8") as f:
         html = render_template('index.html', {'header': header, "results": results})
         f.write(html)
@@ -43,4 +44,4 @@ if __name__ == '__main__':
            {'question': '1', 'indent': '2', 'response': '3', 'diff': 10, 'result': 'fail'},
            {'question': '1', 'indent': '2', 'response': '3', 'diff': 10, 'result': 'fail'}]
     head = {'sum': 10, 'pass': 10, 'fail': 10, 'skip': 10, 'start': 10, 'run': 10}
-    create_test_report(head, res)
+    # create_test_report(head, res)

@@ -3,6 +3,7 @@ import jieba
 from collections import Counter
 import numpy as np
 import math
+from lib.public import logger
 
 
 def stopwords(seg_list: list) -> list:
@@ -15,7 +16,7 @@ def stopwords(seg_list: list) -> list:
 
     stayed_word = []
 
-    filter_keywords = open(r'./data/stopKeywords', 'r', encoding='utf-8')
+    filter_keywords = open('./data/stopKeywords', 'r', encoding='utf-8')
     stop_key = [line.strip() for line in filter_keywords.readlines()]
     for word in seg_list:
         if word not in stop_key:
@@ -85,6 +86,22 @@ def cal_con_dis(v1: list, v2: list, length_vector):
         return format(float(B) / A, ".3f")
     except ZeroDivisionError:
         return 0
+
+
+def contrast_num(expected_knowledge, actual_knowledge):
+    r"""result of contrast
+
+    :param expected_knowledge:  expected result, str object.
+    :param actual_knowledge:    actual result, str object.
+    :return: Contrast value
+    :rtype: float object.
+    """
+    expect, res = count(expected_knowledge), count(actual_knowledge)
+    merge = merge_word(expect, res)
+    v1, v2 = cal_vector(expect, merge), cal_vector(res, merge)
+    diff = round(float(cal_con_dis(v2, v1, len(merge))), 4)
+    logger.log_info('{}{}{}'.format(expect, res, diff))
+    return diff
 
 
 if __name__ == '__main__':

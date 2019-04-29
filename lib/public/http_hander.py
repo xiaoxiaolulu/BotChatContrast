@@ -6,6 +6,7 @@ import yaml
 from lib.public import logger
 from lib.public import relevance
 from lib.utils.get_json_params import GetJsonParams
+from requests import exceptions
 
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
@@ -44,7 +45,8 @@ class BaseKeyWords(GetJsonParams):
         """
 
         try:
-            body, out_values = {}, ''
+            global out_values
+            body = {}
             with open(self.request_file, 'r', encoding='utf-8') as file:
                 items = yaml.load(file, Loader=yaml.FullLoader)
                 for key, value in items.items():
@@ -52,9 +54,10 @@ class BaseKeyWords(GetJsonParams):
                         relevance_body = relevance.custom_manage(str(items['body']), question)
                         body.update(eval(relevance_body))
                     else:
-                        out_values += str(items['outValues'])
+                        out_values = items['outValues']
 
-            method = GetJsonParams.get_value(body, 'method')
+            method, head, text, image = GetJsonParams.get_value(body, 'method'), out_values[0], out_values[1], out_values[2]
+
             if method in ['get', 'GET']:
                 temp = ('url', 'params', 'headers')
                 request_body = GetJsonParams.for_keys_to_dict(*temp, my_dict=body)
@@ -62,17 +65,17 @@ class BaseKeyWords(GetJsonParams):
                     if '=' in request_body.get('params') or '&' in request_body.get('params'):
                         request_body['params'] = dict(parse.parse_qsl(request_body['params']))
 
-                return self.get(**request_body).json(), out_values
+                return self.get(**request_body).json(), head, text, image
 
             if method in ['post', 'POST']:
                 temp = ('url', 'headers', 'json', 'data', 'files')
                 request_body = GetJsonParams.for_keys_to_dict(*temp, my_dict=body)
 
-                return self.post(**request_body).json(), out_values
+                return self.post(**request_body).json(), head, text, image
 
         except SyntaxError:
             logger.log_warn('出错的问题数据是 => {}, 本次执行跳过请手动检查'.format(question))
-        except TimeoutError:
+        except (TimeoutError, exceptions.ConnectionError):
             logger.log_warn('[WinError 10060] 由于连接方在一段时间后没有正确答复或连接的主机没有反应，连接尝试失败')
 
 

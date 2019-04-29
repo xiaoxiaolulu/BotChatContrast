@@ -10,4 +10,16 @@ body:
   headers:
     Access-Token: B7D57FF6592EEC0E9EB2114C512D6DE2A1BB2C2B0C300BEB5B53140B0B602078
     Content-Type: application/json
-outValues: Text
+outValues: [Header, Text, ImageUrl]
+#body:
+#  method: post
+#  url: https://hightalkadminapi-staging.azurewebsites.net/api/V2/WebTalk/GetWebTalkAnswer
+#  json:
+#    id: huajing0-181a-46bd-94b2-8a5b5cestage
+#    webtalkid: 0b8ade4002e14485941cdc3705ad5de3
+#    question: ${question}$
+#    channels: WebChat
+#  headers:
+#    Access-Token: B7D57FF6592EEC0E9EB2114C512D6DE2A1BB2C2B0C300BEB5B53140B0B602078
+#    Content-Type: application/json
+#outValues: [Header, Text]
