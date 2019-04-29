@@ -148,6 +148,8 @@
         integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
         crossorigin="anonymous"></script>
 <script type="text/javascript">
+
+    // 修改图片对比不满1.0但又通过用例, 当不满1.0时则认为不是同一张图片,结果为False
     $(function () {
         function ChangePngResult() {
             var ResultTh = $(".TestResultRep");
@@ -168,6 +170,8 @@
         ChangePngResult();
     });
 
+
+    // 失败的用例结果改为红色并计算成功失败以及用例总数, 同时页面渲染一个通过率的饼图,
     $(function () {
         var dom = document.getElementById("container");
         var myChart = echarts.init(dom);
