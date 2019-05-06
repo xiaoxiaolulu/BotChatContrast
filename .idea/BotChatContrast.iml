@@ -10,6 +10,7 @@
     <option name="TEMPLATE_FOLDERS">
       <list>
         <option value="$MODULE_DIR$/lib/templates" />
+        <option value="$MODULE_DIR$/bot/templates" />
       </list>
     </option>
   </component>

@@ -1,4 +1,5 @@
 # -*- coding:utf-8 -*-
+import json
 from urllib import parse
 import requests
 import urllib3
@@ -49,14 +50,19 @@ class BaseKeyWords(GetJsonParams):
             body = {}
             with open(self.request_file, 'r', encoding='utf-8') as file:
                 items = yaml.load(file, Loader=yaml.FullLoader)
+
                 for key, value in items.items():
+
                     if key == 'body':
+
                         relevance_body = relevance.custom_manage(str(items['body']), question)
                         body.update(eval(relevance_body))
                     else:
                         out_values = items['outValues']
 
             method, head, text, image = GetJsonParams.get_value(body, 'method'), out_values[0], out_values[1], out_values[2]
+
+            logger.log_debug(json.dumps(body, indent=4))
 
             if method in ['get', 'GET']:
                 temp = ('url', 'params', 'headers')
