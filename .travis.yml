@@ -1,14 +1,11 @@
 language: python
-
 python:
     - "3.5"
     - "3.6"
-
 install:
-    - pip install -r requirements.txt
-
+  - pip install pipenv --upgrade-strategy=only-if-needed
+  - pipenv install --dev --skip-lock
 script:
-    - coverage run run.py
-
+  - pipenv run coverage run run.py
 after_success:
-    - coveralls
+  - pipenv run coveralls

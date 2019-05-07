@@ -1,0 +1,24 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+urllib3 = "*"
+jinja2 = "*"
+requests = "*"
+xlwt = "*"
+six = "*"
+numpy = "*"
+simplejson = "*"
+xlrd = "*"
+colorama = "*"
+jieba = "*"
+pyyaml = "*"
+coverage = "*"
+coveralls = "*"
+
+[dev-packages]
+
+[requires]
+python_version = "3.6"
