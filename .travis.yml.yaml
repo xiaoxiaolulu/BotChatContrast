@@ -1,12 +1,18 @@
 language: python
+sudo: enabled
+services:
+    - mysql
 python:
     - "3.5"
-    - "3.6"
-
+env:
+    global:
+     - TRAVIS=true
+before_install:
+    - mysql -e 'CREATE DATABASE IF NOT EXISTS wechat_ticket;'
+    - mv configs.example.json configs.json
+# command to install dependencies
 install:
     - pip install -r requirements.txt
 
-after_success:
-    - coveralls
-
-script: python3 run.py
+script:
+    python run.py test
