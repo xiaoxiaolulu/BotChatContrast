@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html style="">
+<head>
+    <meta charset="utf-8">
+    <!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <style type="text/css">
+        html, body {
+            overflow: auto;
+        }
+
+        #ResultTitle {
+            font-family: Verdana, sans-serif;
+            font-style: normal;
+            color: #1ab394;
+            font-size: 20px;
+            font-weight: 700;
+        }
+
+        .col-sm-12 {
+            margin: 20px;
+        }
+
+        .container_father {
+            text-align: center;
+        }
+
+        #container {
+            width: 400px;
+            height: 320px;
+            margin: 0 auto;
+        }
+
+        .dashboard-header {
+            border-bottom: 1px solid lightgray;
+        }
+
+        #testBody {
+            color: #1ab394;
+            font-size: 15px;
+            font-family: "Microsoft JhengHei UI",
+            sans-serif;
+        }
+
+        .TestResultRep {
+            font-size: 12px;
+            font-family: "Microsoft JhengHei UI", sans-serif;
+        }
+
+        #count-1, #count-2, #count-3, #count-4, #count-5, #count-6, #count-7 {
+            margin-top: 20px;
+        }
+
+        input {
+            margin-left: 20px;
+        }
+
+        #res {
+            position: relative;
+        }
+
+        .Res {
+            color: Green
+        }
+    </style>
+</head>
+<body style="margin: 0">
+<div class="row  border-bottom white-bg dashboard-header">
+    <div class="col-sm-12 text-center" align="center">
+        <span id="ResultTitle">招退工备案的办理材料</span>
+    </div>
+</div>
+<div class='container-fluid'>
+    <div class='row'>
+        <div class="border-bottom white-bg dashboard-header col-sm-6" id="testBody">
+            <ul type="none">
+                <li id="count-1">
+                    <label for="testName">用例名称:</label>
+                    <input type="text" value="招退工备案的办理材料" id="testName" readonly="readonly" disabled="disabled">
+                </li>
+                <li id="count-2">
+                    <label for="testCounts">用例总数:</label>
+                    <input type="text" value=0 id="testCounts" readonly="readonly" disabled="disabled">
+                </li>
+                <li id="count-3">
+                    <label for="testPass">用例通过:</label>
+                    <input type="text" value=0 id="testPass" readonly="readonly" disabled="disabled">
+                </li>
+                <li id="count-4">
+                    <label for="testFail">用例失败:</label>
+                    <input type="text" value=0 id="testFail" readonly="readonly" disabled="disabled">
+                </li>
+                <li id="count-5">
+                    <label for="testScene">用例场景:</label>
+                    <input type="text" value=0 id="testScene" readonly="readonly" disabled="disabled">
+                </li>
+                <li id="count-6">
+                    <label for="testStartTime">开始时间:</label>
+                    <input type="text" value=2019-05-07-16_40_21  id="testStartTime" readonly="readonly"
+                           disabled="disabled">
+                </li>
+                <li id="count-7">
+                    <label for="testAllTime">运行时间:</label>
+                    <input type="text" value=1.6525802612304688 id="testAllTime" readonly="readonly" disabled="disabled">
+                </li>
+            </ul>
+        </div>
+        <div class='container_father col-sm-6 border-bottom'>
+            <div id="container"></div>
+        </div>
+    </div>
+</div>
+<table id="res" border="1" width="100%">
+    <tr>
+        <th>ID</th>
+        <th>Question</th>
+        <th>Intent</th>
+        <th>ExpectedKnowledge</th>
+        <th>ActualKnowlege</th>
+        <th>MatchingScore</th>
+        <th>Result</th>
+    </tr>
+    
+        <tr class="TestResultRep">
+            <th>1</th>
+            <th class="Clear">清除缓存</th>
+            <th>招退工备案的办理材料</th>
+            <th>我什么也不记得了...</th>
+            <th>我什么也不记得了...</th>
+            <th>1.0</th>
+            <th class="Res">Pass</th>
+        </tr>
+    
+</table>
+<script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/echarts.min.js"></script>
+<script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts-gl/echarts-gl.min.js"></script>
+<script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts-stat/ecStat.min.js"></script>
+<script type="text/javascript"
+        src="http://echarts.baidu.com/gallery/vendors/echarts/extension/dataTool.min.js"></script>
+<script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/map/js/china.js"></script>
+<script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/map/js/world.js"></script>
+<script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/extension/bmap.min.js"></script>
+<script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/simplex.js"></script>
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+<!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js"
+        integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+        crossorigin="anonymous"></script>
+<script type="text/javascript">
+
+    // 修改图片对比不满1.0但又通过用例, 当不满1.0时则认为不是同一张图片,结果为False
+    $(function () {
+        function ChangePngResult() {
+            var ResultTh = $(".TestResultRep");
+            for (var i = 0; i < ResultTh.length; i++) {
+                var PngValue = ResultTh[i].children[3].innerText;
+                var PngResult = ResultTh[i].children[6];
+                var PngScore = ResultTh[i].children[5].innerText;
+                var pngMath = RegExp(/png/);
+                var jpgMath = RegExp(/jpg/);
+                if (PngValue.match(pngMath) || PngValue.match(jpgMath)) {
+                    if (parseFloat(PngScore) != 1) {
+                        PngResult.innerHTML = 'Fail';
+                    }
+                }
+            }
+        }
+
+        ChangePngResult();
+    });
+
+
+    // 用例场景数统计
+    $(function () {
+        var clearNum;
+        var sceneTestCaseNum = parseFloat($('#testScene').val());
+
+        function GetSceneTestCaseNum() {
+            clearNum = document.getElementsByClassName('Clear');
+            for (var i = 0; i < clearNum.length; i++) {
+                if (clearNum[i].innerText == '清除缓存') {
+                    sceneTestCaseNum += 1
+                }
+            }
+
+            $("#testScene").val(sceneTestCaseNum);
+        }
+
+        GetSceneTestCaseNum();
+    });
+
+    // 失败的用例结果改为红色并计算成功失败以及用例总数, 同时页面渲染一个通过率的饼图,
+    $(function () {
+        var dom = document.getElementById("container");
+        var myChart = echarts.init(dom);
+        var passNum = parseFloat($('#testPass').val());
+        var failNum = parseFloat($('#testFail').val());
+        var resultStatus;
+        var sumNum = parseFloat($('#testCounts').val());
+
+        function GiveReslutStatusColorAndDrawPie() {
+            resultStatus = document.getElementsByClassName('Res');
+            for (var i = 0; i < resultStatus.length; i++) {
+                if (resultStatus[i].innerText == 'Fail') {
+                    resultStatus[i].style.color = 'Red';
+                    failNum += 1;
+                } else {
+                    passNum += 1;
+                }
+                option = null;
+                option = {
+                    title: {
+                        text: '',
+                        subtext: '',
+                        x: 'center'
+                    },
+                    tooltip: {
+                        trigger: 'item',
+                        formatter: "{a} <br/>{b} : {c} ({d}%)"
+                    },
+                    color: ['forestgreen', 'brown'],
+                    legend: {
+                        orient: 'vertical',
+                        left: 'right',
+                        data: ['成功', '失败']
+                    },
+                    series: [
+                        {
+                            name: '访问来源',
+                            type: 'pie',
+                            radius: '45%',
+                            center: ['70%', '30%'],
+                            data: [
+                                {value: passNum, name: '成功'},
+                                {value: failNum, name: '失败'},
+                            ],
+                            itemStyle: {
+                                emphasis: {
+                                    shadowBlur: 10,
+                                    shadowOffsetX: 0,
+                                    shadowColor: 'rgba(0, 0, 0, 0.5)'
+                                }
+                            }
+                        }
+                    ]
+                };
+                if (option && typeof option === "object") {
+                    myChart.setOption(option, true);
+                }
+            }
+            sumNum = failNum + passNum;
+            $("#testPass").val(passNum);
+            $("#testFail").val(failNum);
+            $("#testCounts").val(sumNum);
+        }
+
+        GiveReslutStatusColorAndDrawPie();
+    })
+</script>
+</body>
+</html>

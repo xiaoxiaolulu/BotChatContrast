@@ -50,3 +50,23 @@
         "Content-Type": "application/json"
     }
 }
+[DEBUG] [2019-05-07 16:40:21,160] logger.py [line:131] : 一共执行的测试集为{'招退工备案的办理材料': 'F:\\BotChatContrastV2\\work_flow\\招退工备案的办理材料.xlsx'}
+[INFO] [2019-05-07 16:40:21,170] logger.py [line:131] : 本次运行的用例为招退工备案的办理材料 => F:\BotChatContrastV2\work_flow\招退工备案的办理材料.xlsx
+[DEBUG] [2019-05-07 16:40:21,188] logger.py [line:131] : [{'question': '清除缓存', 'intent': '招退工备案的办理材料', 'knowledge': '我什么也不记得了...'}]
+[DEBUG] [2019-05-07 16:40:21,188] logger.py [line:131] : 当前问题是 => 清除缓存
+[DEBUG] [2019-05-07 16:40:21,198] logger.py [line:131] : {
+    "method": "post",
+    "url": "https://192.168.1.104:10033/api/admin/channel/v2/webchat/getanswer",
+    "json": {
+        "id": "0cced7d2-c755-438f-a44f-57bddd787184",
+        "webtalkid": "0b8ade4002e14485941cdc3705ad5de3",
+        "question": "\u6e05\u9664\u7f13\u5b58",
+        "channels": "WebChat"
+    },
+    "headers": {
+        "Access-Token": "B7D57FF6592EEC0E9EB2114C512D6DE2A1BB2C2B0C300BEB5B53140B0B602078",
+        "Content-Type": "application/json"
+    }
+}
+[DEBUG] [2019-05-07 16:40:21,877] logger.py [line:131] : 问题:清除缓存,Text的值是->None Header的值是->['我什么也不记得了...'] Image的值是->None Content的值是->None
+[INFO] [2019-05-07 16:40:22,811] logger.py [line:131] : Counter({'记得': 1})Counter({'记得': 1})1.0
