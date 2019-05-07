@@ -46,15 +46,16 @@ def run_test_cases(case_path):
 
                 try:
                     http = http_hander.BaseKeyWords()
-                    res, out_head, out_text, out_image = http.make_test_templates({'question': quest})
+                    res, out_head, out_text, out_image, out_content = http.make_test_templates({'question': quest})
                     res_texts = GJ.get_value(my_dict=res, key=out_text)
                     res_headers = GJ.get_value(my_dict=res, key=out_head)
                     res_images = GJ.get_value(my_dict=res, key=out_image)
+                    res_contents = GJ.get_value(my_dict=res, key=out_content)
 
-                    logger.log_debug("问题:{},Text的值是->{} Header的值是->{} Image的值是->{}".\
-                                     format(quest, res_texts, res_headers, res_images))
+                    logger.log_debug("问题:{},Text的值是->{} Header的值是->{} Image的值是->{} Content的值是->{}".\
+                                     format(quest, res_texts, res_headers, res_images, res_contents))
 
-                    res_text, res_header, res_image = '', '', ''
+                    res_text, res_header, res_image, res_content = '', '', '', ''
                     if isinstance(res_texts, Iterable):
                         for text in res_texts:
                             res_text += text.strip()
@@ -64,14 +65,30 @@ def run_test_cases(case_path):
                     if isinstance(res_images, Iterable):
                         for image in res_images:
                             res_image += os.path.split(image)[-1]
+                    if isinstance(res_contents, Iterable):
+                        for con_val in res_contents:
+                            res_content += dict(con_val)['Value']
 
                     if not isinstance(res_texts, Iterable) and isinstance(res_headers, Iterable):
                         res_text = res_header
                     if not isinstance(res_texts, Iterable) and isinstance(res_images, Iterable):
                         res_text = res_image
-
-                    if not isinstance(res_headers, Iterable) and not isinstance(res_texts, Iterable) and not isinstance(res_images, Iterable):
-                        res_text = "answer.Text & answer.Header & answer.Image未返回任何值，机器人未根据意图查找出答案."
+                    if not isinstance(res_texts, Iterable) and isinstance(res_contents, Iterable):
+                        res_text = res_content
+                    if isinstance(res_texts, Iterable) and isinstance(res_headers, Iterable) and not isinstance(res_images, Iterable) and isinstance(res_contents, Iterable):
+                        res_text = res_text + res_header + res_content
+                    if isinstance(res_texts, Iterable) and not isinstance(res_headers, Iterable) and isinstance(res_images, Iterable) and isinstance(res_contents, Iterable):
+                        res_text = res_text + res_image + res_content
+                    if not isinstance(res_texts, Iterable) and isinstance(res_headers, Iterable) and isinstance(res_images, Iterable) and isinstance(res_contents, Iterable):
+                        res_text = res_header + res_image + res_content
+                    if not isinstance(res_texts, Iterable) and isinstance(res_headers, Iterable) and not isinstance(res_images, Iterable) and isinstance(res_contents, Iterable):
+                        res_text = res_header + res_content
+                    if not isinstance(res_texts, Iterable) and not isinstance(res_headers, Iterable) and isinstance(res_images, Iterable) and isinstance(res_contents, Iterable):
+                        res_text = res_image + res_content
+                    if isinstance(res_texts, Iterable) and not isinstance(res_headers, Iterable) and not isinstance(res_images, Iterable) and isinstance(res_contents, Iterable):
+                        res_text = res_text + res_content
+                    if not isinstance(res_headers, Iterable) and not isinstance(res_texts, Iterable) and not isinstance(res_images, Iterable) and not isinstance(res_contents, Iterable):
+                        res_text = "answer.Text & answer.Header & answer.Image & content未返回任何值，机器人未根据意图查找出答案."
 
                 except TypeError:
                     res_text = "Response Body is Null."
@@ -189,4 +206,4 @@ def main(filepath: str) -> None:
 
 
 if __name__ == '__main__':
-    main('work_flow')
+    main('case')

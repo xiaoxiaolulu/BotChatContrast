@@ -60,7 +60,7 @@ class BaseKeyWords(GetJsonParams):
                     else:
                         out_values = items['outValues']
 
-            method, head, text, image = GetJsonParams.get_value(body, 'method'), out_values[0], out_values[1], out_values[2]
+            method, head, text, image, content = GetJsonParams.get_value(body, 'method'), out_values[0], out_values[1], out_values[2], out_values[3]
 
             logger.log_debug(json.dumps(body, indent=4))
 
@@ -71,13 +71,13 @@ class BaseKeyWords(GetJsonParams):
                     if '=' in request_body.get('params') or '&' in request_body.get('params'):
                         request_body['params'] = dict(parse.parse_qsl(request_body['params']))
 
-                return self.get(**request_body).json(), head, text, image
+                return self.get(**request_body).json(), head, text, image, content
 
             if method in ['post', 'POST']:
                 temp = ('url', 'headers', 'json', 'data', 'files')
                 request_body = GetJsonParams.for_keys_to_dict(*temp, my_dict=body)
 
-                return self.post(**request_body).json(), head, text, image
+                return self.post(**request_body).json(), head, text, image, content
 
         except SyntaxError:
             logger.log_warn('出错的问题数据是 => {}, 本次执行跳过请手动检查'.format(question))

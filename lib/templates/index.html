@@ -92,8 +92,8 @@
                     <input type="text" value=0 id="testFail" readonly="readonly" disabled="disabled">
                 </li>
                 <li id="count-5">
-                    <label for="testSkip">用例跳过:</label>
-                    <input type="text" value=0 id="testSkip" readonly="readonly" disabled="disabled">
+                    <label for="testScene">用例场景:</label>
+                    <input type="text" value=0 id="testScene" readonly="readonly" disabled="disabled">
                 </li>
                 <li id="count-6">
                     <label for="testStartTime">开始时间:</label>
@@ -124,7 +124,7 @@
     {% for res in results %}
         <tr class="TestResultRep">
             <th>{{ loop.index }}</th>
-            <th>{{ res.question }}</th>
+            <th class="Clear">{{ res.question }}</th>
             <th>{{ res.intent }}</th>
             <th>{{ res.knowledge }}</th>
             <th>{{ res.response }}</th>
@@ -170,6 +170,25 @@
         ChangePngResult();
     });
 
+
+    // 用例场景数统计
+    $(function () {
+        var clearNum;
+        var sceneTestCaseNum = parseFloat($('#testScene').val());
+
+        function GetSceneTestCaseNum() {
+            clearNum = document.getElementsByClassName('Clear');
+            for (var i = 0; i < clearNum.length; i++) {
+                if (clearNum[i].innerText == '清除缓存') {
+                    sceneTestCaseNum += 1
+                }
+            }
+
+            $("#testScene").val(sceneTestCaseNum);
+        }
+
+        GetSceneTestCaseNum();
+    });
 
     // 失败的用例结果改为红色并计算成功失败以及用例总数, 同时页面渲染一个通过率的饼图,
     $(function () {

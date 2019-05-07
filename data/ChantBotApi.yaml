@@ -10,7 +10,7 @@ body:
   headers:
     Access-Token: B7D57FF6592EEC0E9EB2114C512D6DE2A1BB2C2B0C300BEB5B53140B0B602078
     Content-Type: application/json
-outValues: [Header, Text, ImageUrl]
+outValues: [Header, Text, ImageUrl, Content]
 #body:
 #  method: post
 #  url: https://hightalkadminapi-staging.azurewebsites.net/api/V2/WebTalk/GetWebTalkAnswer
