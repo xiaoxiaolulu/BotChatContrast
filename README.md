@@ -1,6 +1,6 @@
 
 ### 项目简介
-[![Build Status](https://travis-ci.org/xiaoxiaolulu/BotChatContrast.svg?branch=master)](https://travis-ci.org/xiaoxiaolulu/BotChatContrast)
+[![Build Status](https://travis-ci.org/xiaoxiaolulu/BotChatContrast.svg?branch=master)](https://travis-ci.org/xiaoxiaolulu/BotChatContrast) [![Coverage Status](https://coveralls.io/repos/github/xiaoxiaolulu/BotChatContrast/badge.svg)](https://coveralls.io/github/xiaoxiaolulu/BotChatContrast)
 
 BotChatContrast 是一款以Excel进行用例维护的聊天机器人文本回复对比小工具
 
