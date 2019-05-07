@@ -7,7 +7,7 @@ install:
     - pip install -r requirements.txt
 
 script:
-    - python run.py
+    - coverage run run.py
 
 after_success:
     - coveralls
