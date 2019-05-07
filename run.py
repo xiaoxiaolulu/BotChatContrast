@@ -193,9 +193,9 @@ def main(filepath: str) -> None:
     """
 
     # Log files traceback
-    for log_file in fp.iter_files('./report/log/'):
-        for filename, filepath in dict(log_file).items():
-            os.remove(filepath)
+    # for log_file in fp.iter_files('./report/log/'):
+    #     for filename, filepath in dict(log_file).items():
+    #         os.remove(filepath)
 
     # Report files traceback
     for report in fp.iter_files('./report/report/'):
