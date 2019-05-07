@@ -9,5 +9,5 @@ xlrd==1.1.0
 colorama==0.3.9
 jieba==0.39
 PyYAML==5.1
-coverage = "*"
-coveralls = "*"
+coverage==4.5.2
+coveralls==1.5.1
