@@ -39,11 +39,23 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/report/report/招退工备案的办理材料_2019-05-07.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="-2254">
               <caret line="1" column="14" selection-start-line="1" selection-start-column="14" selection-end-line="1" selection-end-column="14" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/README.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="184">
+                <caret line="8" column="50" lean-forward="true" selection-start-line="8" selection-start-column="50" selection-end-line="8" selection-end-column="50" />
+              </first_editor>
+              <second_editor />
             </state>
           </provider>
         </entry>
@@ -381,7 +393,7 @@
       <workItem from="1557198735717" duration="7590000" />
       <workItem from="1557210987297" duration="12762000" />
       <workItem from="1557224620017" duration="9000" />
-      <workItem from="1557224664368" duration="4610000" />
+      <workItem from="1557224664368" duration="5065000" />
     </task>
     <task id="LOCAL-00001" summary="change project files">
       <created>1556263446729</created>
@@ -611,7 +623,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="179444000" />
+    <option name="totallyTimeSpent" value="179899000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -626,7 +638,7 @@
     <frame x="-7" y="-7" width="1550" height="878" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25016767" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.40778002" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info id="DB Browser" order="3" weight="0.32997987" />
@@ -641,7 +653,7 @@
       <window_info anchor="bottom" id="Version Control" order="8" weight="0.32913166" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.501006" side_tool="true" weight="0.3067227" />
-      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.49899396" weight="0.33053222" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="11" sideWeight="0.49899396" visible="true" weight="0.33053222" />
       <window_info anchor="bottom" id="Python Console" order="12" weight="0.32913166" />
       <window_info anchor="bottom" id="DB Execution Console" order="13" />
       <window_info anchor="bottom" id="SonarLint" order="14" weight="0.32913166" />
@@ -914,16 +926,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="46">
-            <caret line="2" column="1395" selection-start-line="2" selection-start-column="1395" selection-end-line="2" selection-end-column="1395" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/report/log/BotChatContrast.log">
       <provider editor-type-id="text-editor">
         <state relative-caret-position="376">
@@ -940,6 +942,16 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-2254">
           <caret line="1" column="14" selection-start-line="1" selection-start-column="14" selection-end-line="1" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="184">
+            <caret line="8" column="50" lean-forward="true" selection-start-line="8" selection-start-column="50" selection-end-line="8" selection-end-column="50" />
+          </first_editor>
+          <second_editor />
         </state>
       </provider>
     </entry>
