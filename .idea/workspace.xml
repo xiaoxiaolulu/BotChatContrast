@@ -72,7 +72,7 @@
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
               <first_editor relative-caret-position="46">
-                <caret line="2" column="1179" selection-start-line="2" selection-start-column="1179" selection-end-line="2" selection-end-column="1179" />
+                <caret line="2" column="1395" selection-start-line="2" selection-start-column="1395" selection-end-line="2" selection-end-column="1395" />
               </first_editor>
               <second_editor />
             </state>
@@ -467,7 +467,7 @@
       <workItem from="1557198735717" duration="7590000" />
       <workItem from="1557210987297" duration="12762000" />
       <workItem from="1557224620017" duration="9000" />
-      <workItem from="1557224664368" duration="3358000" />
+      <workItem from="1557224664368" duration="3893000" />
     </task>
     <task id="LOCAL-00001" summary="change project files">
       <created>1556263446729</created>
@@ -697,7 +697,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="178192000" />
+    <option name="totallyTimeSpent" value="178727000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -710,7 +710,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="878" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.14822267" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -727,7 +726,7 @@
       <window_info anchor="bottom" id="Version Control" order="8" weight="0.32913166" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.501006" side_tool="true" weight="0.3067227" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="11" sideWeight="0.49899396" visible="true" weight="0.3067227" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="11" sideWeight="0.49899396" visible="true" weight="0.33053222" />
       <window_info anchor="bottom" id="Python Console" order="12" weight="0.32913166" />
       <window_info anchor="bottom" id="DB Execution Console" order="13" />
       <window_info anchor="bottom" id="SonarLint" order="14" weight="0.32913166" />
@@ -1021,7 +1020,7 @@
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
           <first_editor relative-caret-position="46">
-            <caret line="2" column="1179" selection-start-line="2" selection-start-column="1179" selection-end-line="2" selection-end-column="1179" />
+            <caret line="2" column="1395" selection-start-line="2" selection-start-column="1395" selection-end-line="2" selection-end-column="1395" />
           </first_editor>
           <second_editor />
         </state>
