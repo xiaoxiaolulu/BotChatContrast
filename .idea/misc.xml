@@ -3,5 +3,6 @@
   <component name="JavaScriptSettings">
     <option name="languageLevel" value="ES6" />
   </component>
-  <component name="ProjectRootManager" version="2" project-jdk-name="Python 3.6" project-jdk-type="Python SDK" />
+  <component name="ProjectRootManager" version="2" project-jdk-name="Pipenv (BotChatContrastV2)" project-jdk-type="Python SDK" />
+  <component name="jetbrains.communicator.idea.IdProvider" IDEtalkID="395254263FE0316107EAC738A0C70CEE" />
 </project>
