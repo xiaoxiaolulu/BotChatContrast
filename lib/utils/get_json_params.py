@@ -43,11 +43,3 @@ class GetJsonParams(object):
             for key in args:
                 result.update({key: cls.get_value(my_dict, str(key))})
         return result
-
-
-if __name__ == '__main__':
-    data = {"status":1,"answer":{"Header":None,"Text":None,"ImageUrl":[],"VideoUrl":None,"Footer":None},"context":{"Header":["请问您想咨询的是以下哪种情形："],"Content":[{"Value":"1.逾期","Type":"header"},{"Value":"2.未逾期（自退工之日起30天内）","Type":"header"}],"Footer":[]},"responseType":"2","categoryid":None}
-    con = GetJsonParams.get_value(data, 'Content')
-    for val in con:
-        print(dict(val)['Value'])
-

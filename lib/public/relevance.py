@@ -19,7 +19,3 @@ def custom_manage(custom: str, relevance: dict) -> str:
         except TypeError:
             pass
         return custom
-
-
-if __name__ == "__main__":
-    pass

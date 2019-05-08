@@ -34,14 +34,3 @@ def create_test_report(name: str, header: dict, results: list) -> None:
         html = render_template('index.html', {'header': header, "results": results})
         f.write(html)
         f.close()
-
-
-if __name__ == '__main__':
-    res = [{'question': '1', 'indent': '2', 'response': '3', 'diff': 10, 'result': 'pass'},
-           {'question': '1', 'indent': '2', 'response': '3', 'diff': 10, 'result': 'fail'},
-           {'question': '1', 'indent': '2', 'response': '3', 'diff': 10, 'result': 'fail'},
-           {'question': '1', 'indent': '2', 'response': '3', 'diff': 10, 'result': 'pass'},
-           {'question': '1', 'indent': '2', 'response': '3', 'diff': 10, 'result': 'fail'},
-           {'question': '1', 'indent': '2', 'response': '3', 'diff': 10, 'result': 'fail'}]
-    head = {'sum': 10, 'pass': 10, 'fail': 10, 'skip': 10, 'start': 10, 'run': 10}
-    # create_test_report(head, res)

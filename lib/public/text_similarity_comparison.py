@@ -102,7 +102,3 @@ def contrast_num(expected_knowledge, actual_knowledge):
     diff = round(float(cal_con_dis(v2, v1, len(merge))), 4)
     logger.log_info('{}{}{}'.format(expect, res, diff))
     return diff
-
-
-if __name__ == '__main__':
-    pass

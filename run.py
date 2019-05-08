@@ -1,7 +1,6 @@
 # -*- coding:utf-8 -*-
 import os
 import time
-import xlwt
 import simplejson
 from collections import Iterable
 from lib.public import (
@@ -46,11 +45,11 @@ def run_test_cases(case_path):
 
                 try:
                     http = http_hander.BaseKeyWords()
-                    res, out_head, out_text, out_image, out_content = http.make_test_templates({'question': quest})
-                    res_texts = GJ.get_value(my_dict=res, key=out_text)
-                    res_headers = GJ.get_value(my_dict=res, key=out_head)
-                    res_images = GJ.get_value(my_dict=res, key=out_image)
-                    res_contents = GJ.get_value(my_dict=res, key=out_content)
+                    res, out_values = http.make_test_templates({'question': quest})
+                    res_texts = GJ.get_value(my_dict=res, key=out_values[0])
+                    res_headers = GJ.get_value(my_dict=res, key=out_values[1])
+                    res_images = GJ.get_value(my_dict=res, key=out_values[2])
+                    res_contents = GJ.get_value(my_dict=res, key=out_values[3])
 
                     logger.log_debug("问题:{},Text的值是->{} Header的值是->{} Image的值是->{} Content的值是->{}".\
                                      format(quest, res_texts, res_headers, res_images, res_contents))
@@ -75,18 +74,26 @@ def run_test_cases(case_path):
                         res_text = res_image
                     if not isinstance(res_texts, Iterable) and isinstance(res_contents, Iterable):
                         res_text = res_content
+                    if isinstance(res_texts, Iterable) and isinstance(res_headers, Iterable) and isinstance(res_images, Iterable) and not isinstance(res_contents, Iterable):
+                        res_text = res_header + res_text + res_image
                     if isinstance(res_texts, Iterable) and isinstance(res_headers, Iterable) and not isinstance(res_images, Iterable) and isinstance(res_contents, Iterable):
-                        res_text = res_text + res_header + res_content
+                        res_text = res_header + res_text + res_content
                     if isinstance(res_texts, Iterable) and not isinstance(res_headers, Iterable) and isinstance(res_images, Iterable) and isinstance(res_contents, Iterable):
-                        res_text = res_text + res_image + res_content
+                        res_text = res_text + res_content + res_image
                     if not isinstance(res_texts, Iterable) and isinstance(res_headers, Iterable) and isinstance(res_images, Iterable) and isinstance(res_contents, Iterable):
-                        res_text = res_header + res_image + res_content
-                    if not isinstance(res_texts, Iterable) and isinstance(res_headers, Iterable) and not isinstance(res_images, Iterable) and isinstance(res_contents, Iterable):
-                        res_text = res_header + res_content
+                        res_text = res_header + res_content + res_image
                     if not isinstance(res_texts, Iterable) and not isinstance(res_headers, Iterable) and isinstance(res_images, Iterable) and isinstance(res_contents, Iterable):
-                        res_text = res_image + res_content
+                        res_text = res_content + res_image
+                    if isinstance(res_texts, Iterable) and not isinstance(res_headers, Iterable) and isinstance(res_images, Iterable) and not isinstance(res_contents, Iterable):
+                        res_text = res_text + res_image
+                    if not isinstance(res_texts, Iterable) and isinstance(res_headers, Iterable) and isinstance(res_images, Iterable) and not isinstance(res_contents, Iterable):
+                        res_text = res_header + res_image
+                    if isinstance(res_texts, Iterable) and isinstance(res_headers, Iterable) and not isinstance(res_images, Iterable) and not isinstance(res_contents, Iterable):
+                        res_text = res_header + res_text
                     if isinstance(res_texts, Iterable) and not isinstance(res_headers, Iterable) and not isinstance(res_images, Iterable) and isinstance(res_contents, Iterable):
                         res_text = res_text + res_content
+                    if not isinstance(res_texts, Iterable) and isinstance(res_headers, Iterable) and not isinstance(res_images, Iterable) and isinstance(res_contents, Iterable):
+                        res_text = res_header + res_content
                     if not isinstance(res_headers, Iterable) and not isinstance(res_texts, Iterable) and not isinstance(res_images, Iterable) and not isinstance(res_contents, Iterable):
                         res_text = "answer.Text & answer.Header & answer.Image & content未返回任何值，机器人未根据意图查找出答案."
 
@@ -117,72 +124,6 @@ def run_test_cases(case_path):
 
                 results.append(result)
                 make_report_template.create_test_report(filename, header, results)
-
-
-# def write_result(case_path, method='Excel'):
-#     """
-#     Generate test reports
-#     :param case_path: Test case file path, str object.
-#     :param method: Type of test report generated, str object.
-#     :return: None
-#     """
-#     for index, content in enumerate(run_test_cases(case_path)):
-#         for filename, value in dict(content[index]).items():
-#             header, results = value[0], value[1]
-#
-#             logger.log_debug('{}{}{}'.format(filename, header, results))
-#
-#             if method == 'Excel':
-#                 workbook = xlwt.Workbook(encoding='utf-8')
-#                 worksheet = workbook.add_sheet('sheet1')
-#                 worksheet.write(0, 0, label='question')
-#                 worksheet.write(0, 1, label='intent')
-#                 worksheet.write(0, 2, label='knowledge')
-#                 worksheet.write(0, 3, label='response')
-#                 worksheet.write(0, 4, label='diff')
-#                 worksheet.write(0, 5, label='result')
-#                 val1 = 1
-#                 val2 = 1
-#                 val3 = 1
-#                 val4 = 1
-#                 val5 = 1
-#                 val6 = 1
-#                 col1 = worksheet.col(0)
-#                 col1.width = 300 * 20
-#                 col2 = worksheet.col(1)
-#                 col2.width = 300 * 20
-#                 col3 = worksheet.col(2)
-#                 col3.width = 300 * 20
-#                 col4 = worksheet.col(3)
-#                 col4.width = 300 * 20
-#                 col5 = worksheet.col(4)
-#                 col5.width = 300 * 20
-#                 col6 = worksheet.col(5)
-#                 col6.width = 300 * 20
-#                 style = xlwt.easyxf('align: wrap on')
-#                 for list_item in results:
-#                     for key, value in list_item.items():
-#                         if key == "question":
-#                             worksheet.write(val1, 0, value)
-#                             val1 += 1
-#                         elif key == "intent":
-#                             worksheet.write(val2, 1, value)
-#                             val2 += 1
-#                         elif key == "knowledge":
-#                             worksheet.write(val3, 2, value, style)
-#                             val3 += 1
-#                         elif key == "response":
-#                             worksheet.write(val4, 3, value, style)
-#                             val4 += 1
-#                         elif key == 'diff':
-#                             worksheet.write(val5, 4, value)
-#                             val5 += 1
-#                         elif key == 'result':
-#                             worksheet.write(val6, 5, value)
-#                             val6 += 1
-#                 workbook.save('./report/report/{}.xlsx'.format(filename))
-#             else:
-#                 make_report_template.create_test_report(filename, header, results)
 
 
 def main(filepath: str) -> None:

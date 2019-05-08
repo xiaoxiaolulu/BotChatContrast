@@ -32,7 +32,3 @@ def iter_files(path):
     iterate_files(path)
 
     return filepath
-
-
-if __name__ == '__main__':
-    print(iter_files(r'F:\BotChatContrast\case'))

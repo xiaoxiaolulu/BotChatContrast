@@ -1,7 +1,5 @@
 # -*- coding:utf-8 -*-
-import os
 import xlrd
-import xlwt
 
 
 def read_excel(file: str) -> list:
@@ -27,7 +25,3 @@ def read_excel(file: str) -> list:
             list__.append(content)
 
     return list__
-
-
-if __name__ == '__main__':
-    pass
