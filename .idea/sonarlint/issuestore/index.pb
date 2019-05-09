@@ -53,3 +53,5 @@ E
 	README.md,8\e\8ec9a00bfd09b3190ac6b22251dbb1aa95a0579d
 B
 doc/source/conf.py,9\d\9d4e8ab62832d7b298261aae1fe1123d28783525
+;
+pylint.conf,6\5\65c87c9bc09a87cfd3fb2eb8f2d93c5a248df188

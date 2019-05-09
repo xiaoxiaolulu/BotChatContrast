@@ -32,11 +32,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="86182b5b-8c1d-4660-997d-a790036e9e18" name="Default Changelist" comment="修正V1.0.4">
-      <change beforePath="$PROJECT_DIR$/.idea/sonarIssues.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarIssues.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/6/5/65c87c9bc09a87cfd3fb2eb8f2d93c5a248df188" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pylint.conf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pipfile" beforeDir="false" afterPath="$PROJECT_DIR$/Pipfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pipfile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/Pipfile.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -88,13 +87,13 @@
         <entry file="file://$PROJECT_DIR$/lib/utils/make_report_template.py">
           <provider selected="true" editor-type-id="live-pycharm">
             <state>
-              <first_editor relative-caret-position="84">
+              <first_editor relative-caret-position="391">
                 <caret line="19" column="7" selection-start-line="19" selection-start-column="7" selection-end-line="19" selection-end-column="7" />
                 <folding>
                   <element signature="e#23#32#0" expanded="true" />
                 </folding>
               </first_editor>
-              <second_editor relative-caret-position="-161" />
+              <second_editor relative-caret-position="-46" />
             </state>
           </provider>
         </entry>
@@ -115,13 +114,61 @@
         <entry file="file://$PROJECT_DIR$/run.py">
           <provider selected="true" editor-type-id="live-pycharm">
             <state>
-              <first_editor relative-caret-position="414">
-                <caret line="18" column="54" lean-forward="true" selection-start-line="18" selection-start-column="54" selection-end-line="18" selection-end-column="54" />
+              <first_editor relative-caret-position="2539">
+                <caret line="150" selection-start-line="150" selection-end-line="150" />
                 <folding>
                   <element signature="e#23#32#0" expanded="true" />
                 </folding>
               </first_editor>
+              <second_editor relative-caret-position="-161" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/pylint.conf">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="4651">
+              <caret line="570" selection-start-line="570" selection-end-line="570" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Pipfile">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="184">
+              <caret line="8" column="10" selection-start-line="8" selection-start-column="10" selection-end-line="8" selection-end-column="10" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Pipfile.lock">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret selection-end-line="1" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/README.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="138">
+                <caret line="6" column="11" selection-start-line="6" selection-start-column="11" selection-end-line="6" selection-end-column="11" />
+              </first_editor>
               <second_editor />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/requirements.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="299">
+              <caret line="13" selection-start-line="13" selection-end-line="13" />
             </state>
           </provider>
         </entry>
@@ -130,75 +177,8 @@
         <entry file="file://$PROJECT_DIR$/lib/utils/operate_excel.py">
           <provider selected="true" editor-type-id="live-pycharm">
             <state>
-              <first_editor relative-caret-position="-146" />
-              <second_editor relative-caret-position="-146" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lib/public/http_hander.py">
-          <provider selected="true" editor-type-id="live-pycharm">
-            <state>
-              <first_editor relative-caret-position="461">
-                <caret line="85" lean-forward="true" selection-start-line="85" selection-end-line="85" />
-                <folding>
-                  <element signature="e#23#34#0" expanded="true" />
-                </folding>
-              </first_editor>
-              <second_editor relative-caret-position="-161" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lib/public/logger.py">
-          <provider selected="true" editor-type-id="live-pycharm">
-            <state>
               <first_editor />
               <second_editor />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lib/public/relevance.py">
-          <provider selected="true" editor-type-id="live-pycharm">
-            <state>
-              <first_editor />
-              <second_editor />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lib/public/text_similarity_comparison.py">
-          <provider selected="true" editor-type-id="live-pycharm">
-            <state>
-              <first_editor relative-caret-position="-1825" />
-              <second_editor relative-caret-position="-161" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lib/utils/fp.py">
-          <provider selected="true" editor-type-id="live-pycharm">
-            <state>
-              <first_editor relative-caret-position="-307" />
-              <second_editor relative-caret-position="-161" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lib/utils/get_json_params.py">
-          <provider selected="true" editor-type-id="live-pycharm">
-            <state>
-              <first_editor relative-caret-position="-551">
-                <caret line="1" selection-start-line="1" selection-end-line="1" />
-              </first_editor>
-              <second_editor relative-caret-position="-161" />
             </state>
           </provider>
         </entry>
@@ -211,8 +191,8 @@
         <option value="json" />
         <option value="HTML File" />
         <option value="md" />
-        <option value="Python Script" />
         <option value="yaml" />
+        <option value="Python Script" />
       </list>
     </option>
   </component>
@@ -249,7 +229,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/lib/utils/automatically _create _cases.py" />
         <option value="$PROJECT_DIR$/report/report/酒类商品零售许可证_训练集_2019-04-28.html" />
         <option value="$PROJECT_DIR$/docs/build/html/index.html" />
         <option value="$PROJECT_DIR$/docs/modules.rst" />
@@ -299,6 +278,7 @@
         <option value="$PROJECT_DIR$/lib/utils/get_json_params.py" />
         <option value="$PROJECT_DIR$/lib/utils/time_setting.py" />
         <option value="$PROJECT_DIR$/requirements.txt" />
+        <option value="$PROJECT_DIR$/__init__.py" />
         <option value="$PROJECT_DIR$/run.py" />
       </list>
     </option>
@@ -307,10 +287,10 @@
     <option name="directoryName" value="afxZBtYg" />
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-270" />
-    <option name="y" value="180" />
-    <option name="width" value="1310" />
-    <option name="height" value="695" />
+    <option name="x" value="-10" />
+    <option name="y" value="-10" />
+    <option name="width" value="1920" />
+    <option name="height" value="1080" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -594,8 +574,9 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Course" />
       <pane id="Scope" />
+      <pane id="Course" />
+      <pane id="Revu" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -616,25 +597,12 @@
             <path>
               <item name="BotChatContrastV2" type="b2602c69:ProjectViewProjectNode" />
               <item name="BotChatContrastV2" type="462c0819:PsiDirectoryNode" />
-              <item name="lib" type="462c0819:PsiDirectoryNode" />
+              <item name="doc" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="BotChatContrastV2" type="b2602c69:ProjectViewProjectNode" />
               <item name="BotChatContrastV2" type="462c0819:PsiDirectoryNode" />
               <item name="lib" type="462c0819:PsiDirectoryNode" />
-              <item name="public" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="BotChatContrastV2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="BotChatContrastV2" type="462c0819:PsiDirectoryNode" />
-              <item name="lib" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="BotChatContrastV2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="BotChatContrastV2" type="462c0819:PsiDirectoryNode" />
-              <item name="lib" type="462c0819:PsiDirectoryNode" />
-              <item name="utils" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="BotChatContrastV2" type="b2602c69:ProjectViewProjectNode" />
@@ -644,14 +612,21 @@
             <path>
               <item name="BotChatContrastV2" type="b2602c69:ProjectViewProjectNode" />
               <item name="BotChatContrastV2" type="462c0819:PsiDirectoryNode" />
-              <item name="report" type="462c0819:PsiDirectoryNode" />
-              <item name="log" type="462c0819:PsiDirectoryNode" />
+              <item name="skip" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="BotChatContrastV2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="BotChatContrastV2" type="462c0819:PsiDirectoryNode" />
+              <item name="work_flow" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="BotChatContrastV2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Revu" />
       <pane id="NBKnowledgePane" />
     </panes>
   </component>
@@ -993,7 +968,8 @@
       <workItem from="1557311357052" duration="229000" />
       <workItem from="1557311667272" duration="251000" />
       <workItem from="1557366964280" duration="234000" />
-      <workItem from="1557367302045" duration="1313000" />
+      <workItem from="1557367302045" duration="2372000" />
+      <workItem from="1557369780945" duration="256000" />
     </task>
     <task id="LOCAL-00021" summary="测试010">
       <created>1557215649302</created>
@@ -1111,7 +1087,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="197559000" />
+    <option name="totallyTimeSpent" value="198874000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1124,8 +1100,9 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="878" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49865952" visible="true" weight="0.06970509" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49865952" visible="true" weight="0.21849866" />
       <window_info id="Structure" order="1" sideWeight="0.5013405" side_tool="true" weight="0.288874" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info id="DB Browser" order="3" weight="0.32573727" />
@@ -1146,7 +1123,7 @@
       <window_info anchor="bottom" id="Version Control" order="8" weight="0.8064516" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5020107" side_tool="true" weight="0.3268229" />
-      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.49798927" visible="true" weight="0.14112903" />
+      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.49798927" weight="0.64650536" />
       <window_info anchor="bottom" id="DB Execution Console" order="12" />
       <window_info anchor="bottom" id="SonarLint" order="13" weight="0.3266129" />
       <window_info anchor="bottom" id="Tail" order="14" />
@@ -1193,7 +1170,6 @@
       <window_info anchor="bottom" id="Inspection Results" order="55" weight="0.729765" />
       <window_info anchor="bottom" id="Review Board" order="56" weight="0.32898173" />
       <window_info anchor="bottom" id="Code Review" order="57" weight="0.32898173" />
-      <window_info anchor="right" id="GeekHub" side_tool="true" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -1239,6 +1215,7 @@
       <window_info anchor="right" id="Git Scope" order="42" side_tool="true" />
       <window_info anchor="right" id="1024 Tools" order="43" />
       <window_info anchor="right" id="QuickSloth" order="44" />
+      <window_info anchor="right" id="GeekHub" order="45" side_tool="true" />
     </layout>
     <layout-to-restore>
       <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49865952" visible="true" weight="0.3016086" />
@@ -1434,8 +1411,6 @@
     <option name="LAST_COMMIT_MESSAGE" value="修正V1.0.4" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/bot_chat/__init__.py" />
-    <entry file="file://$PROJECT_DIR$/bot/templates/index.html" />
     <entry file="file://$PROJECT_DIR$/bot/templates/base.html" />
     <entry file="file://$PROJECT_DIR$/321321.py" />
     <entry file="file://$PROJECT_DIR$/bot/templates/login.html" />
@@ -1520,16 +1495,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="35">
-            <caret line="6" column="11" selection-start-line="6" selection-start-column="11" selection-end-line="6" selection-end-column="11" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/.coverage">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -1567,13 +1532,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/requirements.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="299">
-          <caret line="13" selection-start-line="13" selection-end-line="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/.travis.yml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="138">
@@ -1588,26 +1546,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Pipfile.lock">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret selection-end-line="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Pipfile">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="184">
-          <caret line="8" column="10" lean-forward="true" selection-start-line="8" selection-start-column="10" selection-end-line="8" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/lib/public/http_hander.py">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="989">
-          <caret line="51" column="43" selection-start-line="51" selection-start-column="43" selection-end-line="51" selection-end-column="43" />
-        </state>
-      </provider>
       <provider selected="true" editor-type-id="live-pycharm">
         <state>
           <first_editor relative-caret-position="461">
@@ -1619,17 +1558,22 @@
           <second_editor relative-caret-position="-161" />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/public/logger.py">
       <provider editor-type-id="text-editor">
-        <state relative-caret-position="966">
-          <caret line="47" column="32" selection-start-line="47" selection-start-column="32" selection-end-line="47" selection-end-column="32" />
+        <state relative-caret-position="989">
+          <caret line="51" column="43" selection-start-line="51" selection-start-column="43" selection-end-line="51" selection-end-column="43" />
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/public/logger.py">
       <provider selected="true" editor-type-id="live-pycharm">
         <state>
           <first_editor />
           <second_editor />
+        </state>
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="966">
+          <caret line="47" column="32" selection-start-line="47" selection-start-column="32" selection-end-line="47" selection-end-column="32" />
         </state>
       </provider>
     </entry>
@@ -1663,24 +1607,19 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/utils/fp.py">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="629">
-          <caret line="34" selection-start-line="34" selection-end-line="34" />
-        </state>
-      </provider>
       <provider selected="true" editor-type-id="live-pycharm">
         <state>
           <first_editor relative-caret-position="-307" />
           <second_editor relative-caret-position="-161" />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/utils/get_json_params.py">
       <provider editor-type-id="text-editor">
-        <state relative-caret-position="166">
-          <caret line="27" column="52" lean-forward="true" selection-start-line="27" selection-start-column="52" selection-end-line="27" selection-end-column="52" />
+        <state relative-caret-position="629">
+          <caret line="34" selection-start-line="34" selection-end-line="34" />
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/utils/get_json_params.py">
       <provider selected="true" editor-type-id="live-pycharm">
         <state>
           <first_editor relative-caret-position="-551">
@@ -1689,8 +1628,25 @@
           <second_editor relative-caret-position="-161" />
         </state>
       </provider>
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="166">
+          <caret line="27" column="52" lean-forward="true" selection-start-line="27" selection-start-column="52" selection-end-line="27" selection-end-column="52" />
+        </state>
+      </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/__init__.py" />
     <entry file="file://$PROJECT_DIR$/lib/utils/make_report_template.py">
+      <provider selected="true" editor-type-id="live-pycharm">
+        <state>
+          <first_editor relative-caret-position="391">
+            <caret line="19" column="7" selection-start-line="19" selection-start-column="7" selection-end-line="19" selection-end-column="7" />
+            <folding>
+              <element signature="e#23#32#0" expanded="true" />
+            </folding>
+          </first_editor>
+          <second_editor relative-caret-position="-46" />
+        </state>
+      </provider>
       <provider editor-type-id="text-editor">
         <state relative-caret-position="629">
           <caret line="36" lean-forward="true" selection-start-line="36" selection-end-line="36" />
@@ -1699,37 +1655,8 @@
           </folding>
         </state>
       </provider>
-      <provider selected="true" editor-type-id="live-pycharm">
-        <state>
-          <first_editor relative-caret-position="84">
-            <caret line="19" column="7" selection-start-line="19" selection-start-column="7" selection-end-line="19" selection-end-column="7" />
-            <folding>
-              <element signature="e#23#32#0" expanded="true" />
-            </folding>
-          </first_editor>
-          <second_editor relative-caret-position="-161" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/utils/operate_excel.py">
-      <provider selected="true" editor-type-id="live-pycharm">
-        <state>
-          <first_editor relative-caret-position="-146" />
-          <second_editor relative-caret-position="-146" />
-        </state>
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="230">
-          <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/utils/time_setting.py">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="253">
-          <caret line="11" column="18" selection-start-line="11" selection-start-column="18" selection-end-line="11" selection-end-column="18" />
-        </state>
-      </provider>
       <provider selected="true" editor-type-id="live-pycharm">
         <state>
           <first_editor relative-caret-position="460">
@@ -1738,22 +1665,78 @@
           <second_editor />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/run.py">
       <provider editor-type-id="text-editor">
-        <state relative-caret-position="805">
-          <caret line="43" column="61" selection-start-line="43" selection-start-column="61" selection-end-line="43" selection-end-column="61" />
+        <state relative-caret-position="253">
+          <caret line="11" column="18" selection-start-line="11" selection-start-column="18" selection-end-line="11" selection-end-column="18" />
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Pipfile">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="184">
+          <caret line="8" column="10" selection-start-line="8" selection-start-column="10" selection-end-line="8" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Pipfile.lock">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret selection-end-line="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="138">
+            <caret line="6" column="11" selection-start-line="6" selection-start-column="11" selection-end-line="6" selection-end-column="11" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/requirements.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="299">
+          <caret line="13" selection-start-line="13" selection-end-line="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/utils/operate_excel.py">
       <provider selected="true" editor-type-id="live-pycharm">
         <state>
-          <first_editor relative-caret-position="414">
-            <caret line="18" column="54" lean-forward="true" selection-start-line="18" selection-start-column="54" selection-end-line="18" selection-end-column="54" />
+          <first_editor />
+          <second_editor />
+        </state>
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="230">
+          <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pylint.conf">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4651">
+          <caret line="570" selection-start-line="570" selection-end-line="570" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/run.py">
+      <provider selected="true" editor-type-id="live-pycharm">
+        <state>
+          <first_editor relative-caret-position="2539">
+            <caret line="150" selection-start-line="150" selection-end-line="150" />
             <folding>
               <element signature="e#23#32#0" expanded="true" />
             </folding>
           </first_editor>
-          <second_editor />
+          <second_editor relative-caret-position="-161" />
+        </state>
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="805">
+          <caret line="43" column="61" selection-start-line="43" selection-start-column="61" selection-end-line="43" selection-end-column="61" />
         </state>
       </provider>
     </entry>
