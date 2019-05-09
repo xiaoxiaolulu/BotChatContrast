@@ -23,6 +23,21 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/../MeteorTears/.coveralls.yaml">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../MeteorTears/.travis.yaml">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../MeteorTears/README.md">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/../MeteorTears/cases/ksqa.yaml">
           <value>
             <set />

@@ -55,3 +55,5 @@ B
 doc/source/conf.py,9\d\9d4e8ab62832d7b298261aae1fe1123d28783525
 ;
 pylint.conf,6\5\65c87c9bc09a87cfd3fb2eb8f2d93c5a248df188
+w
+G.idea/sonarlint/issuestore/6/5/65c87c9bc09a87cfd3fb2eb8f2d93c5a248df188,4\0\400aeafc64989ebe848add757d33cf4cdfc4e1d6
